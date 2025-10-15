@@ -14,9 +14,9 @@ mkdir -p "$beni_dir/config"
 
 #create the files in their respective subdirectories with their contents
 
-echo "# This is the config file
+echo '# This is the config file
 ASSIGNMENT="Shell Navigation"
-DAYS_REMAINING=2" > $beni_dir/config/config.env
+DAYS_REMAINING=2' > $beni_dir/config/config.env
 
 echo "student, assignment, submission status
 Chinemerem, Shell Navigation, not submitted
@@ -66,3 +66,15 @@ echo "--------------------------------------------"
 
 check_submissions $submissions_file' > $beni_dir/app/reminder.sh
 
+echo '
+if [ -f "./app/reminder.sh" ]; then
+     ./app/reminder.sh
+else
+    echo "Error: reminder.sh not found!"
+    exit 1
+fi' > $beni_dir/startup.sh
+
+#adding execution permissions to the shell scripts
+chmod +x $beni_dir/app/reminder.sh
+chmod +x $beni_dir/startup.sh   
+chmod +x $beni_dir/modules/functions.sh
