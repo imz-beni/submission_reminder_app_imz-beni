@@ -13,8 +13,7 @@ if [[ ! $name1 =~ ^[a-zA-Z]+$ ]]; then
     exit 1
 fi
 
-dir_name="submissions
-_reminder_$name1"
+dir_name="submission_reminder_$name1"
 submissions_file="$dir_name/assets/submissions.txt"
 config_file="$dir_name/config/config.env"
 
